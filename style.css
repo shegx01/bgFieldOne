@@ -1,0 +1,383 @@
+body {
+  background-color: #819EF2;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container-wrapper {
+  display: grid;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: minmax(300px, 600px);
+  margin: 30px 30px;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+
+.container--left-side,
+.container--right-side,
+.contact-list,
+.user-header {
+  min-width: 465px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.container--left-side,
+.container--right-side {
+  display: grid;
+
+}
+
+.container--left-side {
+  grid-template-columns: 1fr;
+  grid-template-rows: 40% 60%;
+}
+
+.container--right-side {
+  background-color: #5B6BD5;
+  grid-template-columns: 1fr;
+  grid-template-rows: 25% 75%;
+  min-width: 645px;
+}
+
+.user-header{
+  padding: 30px;
+}
+
+.user-header {
+  background-color: white;
+
+}
+
+.contact-list {
+  background-color: #F7FAFC;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.task-header {
+  /*  */
+}
+
+.task-list {
+  background-color: #5B6BD5;
+  display: grid;
+  grid-template-columns: 26% 74%;
+  grid-row: 1fr;
+}
+
+.user-details-container {
+  display: flex;
+  align-items: center;
+}
+
+.user-details--image-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.user-details--user-name {
+  padding-left: 10px;
+  color: rgba(104, 129, 231, 0.925);
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.user-details--notification {
+  background-color: #EAF2FC;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: auto;
+  display: flex;
+}
+
+.user-text {
+  margin-top: 20px;
+}
+
+.user-text-title,
+.content-list-texts-titile {
+  font-size: 18px;
+  text-transform: capitalize;
+  color: rgb(70, 70, 70);
+
+}
+
+.user-text-subtitle,
+.content-list-texts-subtitle {
+  color: rgba(143, 143, 143, 0.74);
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.user-controls {
+  display: flex;
+  margin-top: 20px;
+}
+
+.new-contact,
+.new-task, .task-button{
+  text-decoration: none;
+  padding: 8px 10px;
+  color: #7A889B;
+  text-transform: capitalize;
+  font-size: 14px;
+  border-radius: 5px;
+
+}
+
+.new-contact {
+  background-color: #6881E7;
+  color: white;
+}
+
+.new-task {
+  margin-left: 10px;
+  border: 1px solid rgb(226, 225, 225);
+}
+
+.control-input {
+  margin-left: 10px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.search-input {
+
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(226, 225, 225);
+
+}
+
+.search-input::placeholder {
+  color: rgb(141, 140, 140);
+  text-transform: capitalize;
+  padding-left: 10px;
+}
+
+.search-input-icon-wrapper {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.contact-list-content {
+  display: flex;
+
+}
+
+.list-content-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.content-list-texts-titile {
+  font-size: 14px;
+}
+
+.content-list-texts {
+  margin-left: 20px;
+}
+
+.content-list-texts-subtitle {
+  text-transform: capitalize;
+}
+
+.account-controls {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.account-control-text {
+  color: rgb(141, 140, 140);
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.contact-list-checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.contact-list-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #D0D1D1;
+}
+
+.contact-list-checkbox:hover input~.checkmark {
+  background-color: rgb(214, 217, 255);
+
+}
+
+/* When the checkbox is checked, add a blue background */
+.contact-list-checkbox input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.contact-list-checkbox input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.contact-list-checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+.list-container {
+  display: grid;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.list-container-active {
+  background-color: #EDF2F7;
+}
+
+.user-details--image-wrapper--right {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+.user-header--right {
+  background-color: #4D55BC;
+  height: 100%;
+}
+
+.username-wrapper {
+  margin-left: 20px;
+}
+
+.user-details--username-title {
+  text-transform: capitalize;
+  color: white;
+}
+.user-details--username-sub {
+padding-top: 10px;
+color: #697CD9;
+}
+.task-button {
+  background-color: #5B6BD5;
+  color: white;
+}
+
+.user-details--notification--right{
+  margin-left: auto;
+}
+
+.task-list-notification {
+  display: flex;
+  flex-direction: column;
+}
+
+.notifications {
+  color: rgb(181, 185, 214);
+  text-decoration: none;
+  margin: 15px 0 0 30px;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.task-list-notification {
+  margin-top: 20px;
+
+}
+
+.notification-count {
+  padding-left: 5px;
+  color: rgb(181, 185, 214);
+
+}
+
+.white {
+  color: white;
+}
+
+.timeline-messages {
+  display: flex;
+  align-items: center;
+  margin-top: 34px;
+}
+
+.timeline-messages-text {
+  width: 100%;
+  margin: 0 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+  font-size: small;
+}
+
+.elipsis-wrapper,
+.circle-wrapper,
+.timeline-messages-text {
+
+}
+
+.elipsis-wrapper {
+  margin: 0 20px 0 10px;
+}
+.timeline-messages-headline-text--subtitle {
+  color: #97B0F1;
+  padding-left: 26px;
+  font-size: 14px;
+  font-style: italic;
+}
