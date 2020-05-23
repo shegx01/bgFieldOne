@@ -95,6 +95,7 @@ body {
   text-transform: capitalize;
   font-weight: 600;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .user-details--notification {
@@ -192,6 +193,7 @@ body {
 
 .content-list-texts-titile {
   font-size: 14px;
+  cursor: pointer;
 }
 
 .content-list-texts {
@@ -303,6 +305,7 @@ body {
 
 .username-wrapper {
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .user-details--username-title {
@@ -366,14 +369,10 @@ color: #697CD9;
   font-size: small;
 }
 
-.elipsis-wrapper,
-.circle-wrapper,
-.timeline-messages-text {
-
-}
 
 .elipsis-wrapper {
   margin: 0 20px 0 10px;
+  cursor: pointer;
 }
 .timeline-messages-headline-text--subtitle {
   color: #97B0F1;
